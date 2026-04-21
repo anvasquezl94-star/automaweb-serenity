@@ -17,7 +17,8 @@ public class LoginSteps {
     @Given("que el usuario abre la web")
     public void abrirWeb() {
 
-        System.out.println("INICIANDO AUTOMATIZACIÓN WEB...");
+        System.out.println("INICIANDO AUTO WEB...");
+        System.out.println("AUTO WEB sauce compras onlinegit");
         var driver = Serenity.getDriver();
 
         driver.manage().window().maximize();
