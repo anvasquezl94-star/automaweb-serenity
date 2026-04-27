@@ -51,12 +51,14 @@ public class AddToCartSteps {
     }
 
     @Then ("debería ver el carrito")
-    public void deberia_ver_el_producto_en_el_carrito() {
-        // Aquí puedes agregar la validación más tarde
-        OnStage.theActorInTheSpotlight().should(
-                seeThat(MyCartVisible.isDisplayed())
+    public void deberia_ver_el_carrito() {  // Cambié el nombre para que coincida con el step
+        Actor actor = OnStage.theActorInTheSpotlight();
+        actor.should(
+                seeThat(MyCartVisible.isDisplayed()),  // Valida que el carrito esté visible
+                seeThat(MyCartVisible.atLeastOneProductInCart())  // Valida que haya al menos un producto
         );
-        System.out.println("debería ver el carrito ");
+        // Opcional: Mantén esto para debug, o remuévelo si usas logs de Serenity
+        System.out.println("Validación completada: carrito visible con al menos un producto");
     }
 
 }
